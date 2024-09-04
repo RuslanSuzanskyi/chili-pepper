@@ -1,2 +1,5 @@
 @import "./base/reset";
-@import "./base//variables";
+@import "./abstacts/variables";
+
+@import "./base/typography";
+@import "./abstacts/functions";

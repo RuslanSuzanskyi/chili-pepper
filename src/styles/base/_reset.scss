@@ -18,9 +18,12 @@ footer, header, nav, section, main{
   display: block;
 }
 
-body{
+body {
   line-height: 1;
   background-color: #fff;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-normal;
+  font-size: toRem(14);
 }
 
 ol, ul{

@@ -1,0 +1,5 @@
+@mixin font-regular {
+    font-family: $font-family-primary;
+    font-size: toRem(14);
+    font-weight: $font-weight-normal;
+}
