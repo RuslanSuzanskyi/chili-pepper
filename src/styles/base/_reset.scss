@@ -1,3 +1,6 @@
+@import "../abstacts/_variables.scss";
+@import "../abstacts/_functions.scss";
+
 *, *:before, *:after{
   box-sizing: border-box;
 }
@@ -20,10 +23,22 @@ footer, header, nav, section, main{
 
 body {
   line-height: 1;
+  min-height: 100%;
   background-color: #fff;
   font-family: $font-family-primary;
   font-weight: $font-weight-normal;
-  font-size: toRem(14);
+  font-size: toRem(16);
+}
+
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
 }
 
 ol, ul{
