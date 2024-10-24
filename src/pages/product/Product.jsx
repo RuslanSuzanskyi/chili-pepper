@@ -16,7 +16,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const product = products.find(p => p.slug === slug);
-  const productUrl = `http://localhost:3000/${product.slug}`;
+  const productUrl = `http://${product.slug}`;
   const productTitle = product.title;
 
   if (!product) {
