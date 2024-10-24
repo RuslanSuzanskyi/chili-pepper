@@ -1,3 +1,23 @@
+:root {
+  --white-color: #fff;
+  --white-90-color: #e8e9eb;
+  --white-rgba-25-color: rgba(255, 255, 255, 0.25);
+  --orange-color: #f06543;
+  --black-color: #000;
+  --black-80-color: #313638;
+  --black-rgba-15-color: rgba(0, 0, 0, 0.15);
+  --black-rgba-30-color: rgba(0, 0, 0, 0.3);
+  --red-color: #ff7878;
+  --green-color: rgb(99, 193, 50);
+  --green-color-rgba: rgba(99, 193, 50, 0.8);
+  --green-color-rgba-10: rgba(99, 193, 50, 0.1);
+  --font-family-primary: Open Sans, sans-serif;
+  --font-family-price: Lora;
+  --font-weight-normal: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -14,6 +34,7 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
           text-size-adjust: none;
+  text-decoration: none;
 }
 
 footer, header, nav, section, main {
@@ -23,10 +44,28 @@ footer, header, nav, section, main {
 body {
   line-height: 1;
   min-height: 100%;
+  color: #313638;
   background-color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.25rem;
+}
+
+a {
+  color: #313638;
+}
+a:hover {
+  color: #f06543;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 #root {
@@ -59,4 +98,139 @@ table {
 
 input {
   border-radius: 0;
+  outline-color: none;
+}
+
+:root {
+  --white-color: #fff;
+  --white-90-color: #e8e9eb;
+  --white-rgba-25-color: rgba(255, 255, 255, 0.25);
+  --orange-color: #f06543;
+  --black-color: #000;
+  --black-80-color: #313638;
+  --black-rgba-15-color: rgba(0, 0, 0, 0.15);
+  --black-rgba-30-color: rgba(0, 0, 0, 0.3);
+  --red-color: #ff7878;
+  --green-color: rgb(99, 193, 50);
+  --green-color-rgba: rgba(99, 193, 50, 0.8);
+  --green-color-rgba-10: rgba(99, 193, 50, 0.1);
+  --font-family-primary: Open Sans, sans-serif;
+  --font-family-price: Lora;
+  --font-weight-normal: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+}
+
+header {
+  padding: 1.5625rem 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.custom-container {
+  max-width: 90rem !important;
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+button {
+  background-color: #f06543;
+  color: #e8e9eb;
+}
+
+.image__wrapper {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.image__wrapper-cartTab {
+  width: 96px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+.image__wrapper-empty-cart {
+  max-width: 240px;
+  margin-bottom: 3rem;
+}
+.image__wrapper-empty-cart .empty-cart__img {
+  width: 100%;
+}
+
+.cart-tab__container {
+  max-width: 960px !important;
+  padding: 0 !important;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.card:hover .card__img {
+  transform: scale(1.1);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes _show {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.cart-counter {
+  display: inline-flex;
+  justify-content: center;
+  width: 56px;
+  margin: 0 4px;
+  height: 40px;
+  background-color: #fff;
+  padding: 1px 12px;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  text-align: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: border-color 0.3s ease-in-out;
+}
+.cart-counter:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dropdown {
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--black-rgba-30-color);
+  padding: 8px 0;
+}
+
+.dropdown:empty {
+  border: none;
+}
+
+.icon-cart-empty {
+  position: relative;
+  margin-bottom: 48px;
+  right: 13px;
 }/*# sourceMappingURL=main.css.map */

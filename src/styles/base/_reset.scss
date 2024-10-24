@@ -15,6 +15,7 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
+  text-decoration: none;
 }
 
 footer, header, nav, section, main{
@@ -24,12 +25,29 @@ footer, header, nav, section, main{
 body {
   line-height: 1;
   min-height: 100%;
-  background-color: #fff;
+  color: $black-80-color;
+  background-color: $white-color;
   font-family: $font-family-primary;
   font-weight: $font-weight-normal;
-  font-size: toRem(16);
+  font-size: toRem(20);
 }
 
+a {
+  color: $black-80-color;
+  &:hover {
+    color: $orange-color;
+  }
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 #root {
   min-height: 100vh;
@@ -61,4 +79,5 @@ table{
 
 input{
   border-radius: 0;
+  outline-color: none;
 }
