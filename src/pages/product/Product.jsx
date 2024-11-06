@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
-import { products } from "../../utils/constants";
-import { Container, Box, Typography, Button, Divider } from "@mui/material";
+import { useParams, Link as RouterLink } from "react-router-dom";
+import { products, categories } from "../../utils/constants";
+import { Container, Box, Typography, Button, Divider, Breadcrumbs, Link } from "@mui/material";
 import Stack from '@mui/material/Stack';
 import LazyImage from "../../components/lazyImage/LazyImage";
 import { useState } from "react";
@@ -16,8 +16,10 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const product = products.find(p => p.slug === slug);
-  const productUrl = `http://${product.slug}`;
+  const productUrl = `localhost:3000/${product.slug}`;
   const productTitle = product.title;
+
+  const category = categories.find(cat => cat.id === product.categoryId);
 
   if (!product) {
     return <p>Product not found</p>;
@@ -41,7 +43,33 @@ const Product = () => {
   return (
     <main>
       <Container className="custom-container">
-      <Box 
+        <Breadcrumbs 
+          aria-label="breadcrumb" 
+          sx={{ my: 2 }}
+        >
+          <Link 
+            component={RouterLink} 
+            to="/shop" 
+            underline="none" 
+            color="inherit"
+          >
+            Магазин
+          </Link>
+          <Link 
+            component={RouterLink} 
+            to="/shop" 
+            underline="none" 
+            color="inherit"
+          >
+            {category.name}
+          </Link>
+          <Typography 
+            color="text.primary"
+          >
+            {product.title}
+          </Typography>
+        </Breadcrumbs>
+        <Box 
           sx={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -142,7 +170,7 @@ const Product = () => {
                     mb: 2
                   }}
                 >
-                  {product.categoryId}
+                  {category.name}
                 </Typography>
                 <Typography
                   sx={{
@@ -242,19 +270,33 @@ const Product = () => {
                   {product.description}
                 </Typography>  
               </Box>
-              <Box>
-                <FacebookShareButton url={productUrl} quote={productTitle}>
-                  <FacebookIcon />
-                </FacebookShareButton>
-                <TelegramShareButton url={productUrl} quote={productTitle}>
-                  <TelegramIcon />
-                </TelegramShareButton>
-                <ViberShareButton url={productUrl} quote={productTitle}>
-                  <ViberIcon />
-                </ViberShareButton >
-                <TwitterShareButton url={productUrl} quote={productTitle}>
-                  <XIcon />
-                </TwitterShareButton>
+              <Box
+                sx={{
+                  border: '1px solid var(--black-rgba-15-color)',
+                  borderRadius: '8px',
+                  p: '20px'
+                }}
+              >
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1
+                  }}
+                >
+                  <FacebookShareButton url={productUrl} quote={productTitle}>
+                    <FacebookIcon />
+                  </FacebookShareButton>
+                  <TelegramShareButton url={productUrl} quote={productTitle}>
+                    <TelegramIcon />
+                  </TelegramShareButton>
+                  <ViberShareButton url={productUrl} quote={productTitle}>
+                    <ViberIcon />
+                  </ViberShareButton >
+                  <TwitterShareButton url={productUrl} quote={productTitle}>
+                    <XIcon />
+                  </TwitterShareButton>
+                </Box>  
               </Box>
             </Stack>
           </Box>

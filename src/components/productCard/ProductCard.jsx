@@ -9,12 +9,12 @@ import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../stores/cart';
+import StarsRating from '../starsRating/StarsRating';
 
-const ProductCard = (props) => {
-  const { title, price, image, slug, categoryId, id } = props.data;
+const ProductCard = ({data}) => {
+  const { title, price, image, slug, categoryId, id, rating } = data;
 
   const carts = useSelector(store => store.cart.items);
-  console.log(carts);
   const isProductInCart = carts.some(item => item.productId === id);
 
   const [isLoaded, setIsLoaded] = useState(false);
@@ -71,13 +71,9 @@ const ProductCard = (props) => {
         transform: isLoaded ? 'translateY(0)' : 'translateY(50px)',
         transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border 0.3s ease-in-out',
         mb: 3,
-        width: 'calc(100% / 3)',
-        '@media (max-width: 768px)': {
-          width: 'calc(100% / 2)',
-        },
-        '@media (max-width: 320px)': {
-          width: 'calc(100% / 1)',
-        }, 
+        overflow: 'hidden',
+        width: '100%',
+        height: '100%'
       }}
     >
       <Card
@@ -93,7 +89,7 @@ const ProductCard = (props) => {
             },
           }}
         >
-          <Link key={slug} to={`/${slug}`} replace>
+          <Link key={slug} to={`/${slug}`}>
             <CardMedia
               sx={{
                 width: "100%",
@@ -132,10 +128,12 @@ const ProductCard = (props) => {
                 overflow: 'hidden',
                 whiteSpace: 'nowrap',
                 textOverflow: "ellipsis",
+                mb: 1
               }}
             >
               {categoryNames}
             </Typography>
+            <StarsRating rating={rating}/>
           </Link>
             <Box 
               display="flex" 

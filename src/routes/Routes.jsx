@@ -7,6 +7,7 @@ const Articles = lazy(() => import("../pages/articles/Articles"));
 const Contacts = lazy(() => import("../pages/contacts/Contacts"));
 const NotFound = lazy(() => import("../pages/notFound/NotFound"));
 const Product = lazy(() => import("../pages/product/Product"));
+const Category = lazy(() => import("../pages/category/Category"));
 
 const AppRoute = () => {
   return (
@@ -15,7 +16,8 @@ const AppRoute = () => {
           <Route path="/" element={<Layout />}>
             <Route index path="" element={<Home />}/>
             <Route path="shop" element={<Shop />} />
-            <Route path="/:slug" element={<Product />}/>
+            <Route path=":slug" element={<Product />}/>
+            <Route path="category/:slug" element={<Category />}/>
             <Route path="articles" element={<Articles />}/>
             <Route index path="contacts" element={<Contacts />}/>
           </Route>

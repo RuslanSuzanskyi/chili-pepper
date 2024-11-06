@@ -73,9 +73,16 @@ const Header = React.memo(() => {
               color="inherit"
               aria-label="menu"
               onClick={handleDrawerOpen}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ 
+                display: { xs: 'block', md: 'none' },
+              }}
             >
-              <MenuIcon />
+              <MenuIcon 
+                fontSize="large"
+                sx={{
+                  color: 'var(--white-90-color)',
+                }} 
+              />
             </IconButton>
             <List>
               <Box 

@@ -1,24 +1,20 @@
-import { Box } from '@mui/material';
 import ProductCard from '../productCard/ProductCard';
 
 const ProductList = ({ products }) => {
-  return (  
-    <Box
-      maxWidth="80%"
-      position="relative" 
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-      }}
-    >
-      {products.map((product, key)=> (
-        <ProductCard
-          data={product}
-          key={key}
-        />
-      ))}
-    </Box>
+  return (
+    <>
+      {products.length === 0 ? (
+        <p>{`Щось не працює :(`}</p>
+      ) : (
+        products.map((product, key) => (
+          <ProductCard
+            data={product}
+            key={key}
+          />
+        ))
+      )}
+    </>
   );
-}
- 
+};
+
 export default ProductList;
