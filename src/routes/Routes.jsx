@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as BrowserRouter, Route, Routes } from "react-router-dom";
 import { lazy } from "react";
 const Layout = lazy(() => import("../components/layout/Layout"));
 const Home = lazy(() => import("../pages/home/Home"));
@@ -14,7 +14,7 @@ const AppRoute = () => {
     <BrowserRouter basename="/chili-pepper"> 
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index path="" element={<Home />}/>
+            <Route path="" element={<Home />}/>
             <Route path="shop" element={<Shop />} />
             <Route path=":slug" element={<Product />}/>
             <Route path="category/:slug" element={<Category />}/>
