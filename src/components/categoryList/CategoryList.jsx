@@ -26,36 +26,36 @@ const Category = ({ categories, selectedCategory}) => {
             flexDirection: 'column', 
           }}
         > 
-          {categories.map(({name, id, slug}) => (
-            <ListItem
-              sx={{
-                p: '0'
-              }}
-            >
-              <Link
-                component={RouterLink}
-                to={id === null ? "/shop" : `category/${slug}`}
-                sx={{
-                  textDecoration: 'none',
-                  height: '32px',
-                  backgroundColor: selectedCategory === id ? 'var(--black-rgba-15-color)' : 'transparent',
-                  color: 'var(--black-80-color)',
-                  p: '4px 12px !important',
-                  width: '100%',
-                  justifyContent: 'start',
-                  textTransform: 'none',
-                  fontSize: '18px',
-                  fontFamily: 'var(--font-famiry-primary)',
-                  transition: 'all 0.3s ease',
-                  '&:hover': {
-                    backgroundColor: 'var(--black-rgba-15-color)',
-                  },
-                }}
-              >
-                {name}
-              </Link>    
-            </ListItem>
-          ))}
+          {categories && categories.length > 0 ? (
+            categories.map(({ name, id, slug }) => (
+              <ListItem sx={{ p: '0' }} key={id}>
+                <Link
+                  component={RouterLink}
+                  to={id === null ? "/shop" : `category/${slug}`}
+                  sx={{
+                    textDecoration: 'none',
+                    height: '32px',
+                    backgroundColor: selectedCategory === id ? 'var(--black-rgba-15-color)' : 'transparent',
+                    color: 'var(--black-80-color)',
+                    p: '4px 12px !important',
+                    width: '100%',
+                    justifyContent: 'start',
+                    textTransform: 'none',
+                    fontSize: '18px',
+                    fontFamily: 'var(--font-famiry-primary)',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      backgroundColor: 'var(--black-rgba-15-color)',
+                    },
+                  }}
+                >
+                  {name}
+                </Link>
+              </ListItem>
+            ))
+          ) : (
+            <Typography variant="h6">Щось не працює</Typography>
+          )}
         </List>
       </Toolbar>
   );
