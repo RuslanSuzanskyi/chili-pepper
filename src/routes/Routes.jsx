@@ -11,7 +11,7 @@ const Category = lazy(() => import("../pages/category/Category"));
 
 const AppRoute = () => {
   return (
-    <BrowserRouter> 
+    <BrowserRouter basename="/chili-pepper"> 
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index path="" element={<Home />}/>
