@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkchili_pepper=self.webpackChunkchili_pepper||[]).push([[848],{3848:(e,p,c)=>{c.r(p),c.d(p,{default:()=>s});var i=c(579);const s=()=>(0,i.jsx)("main",{children:"404 - Page Not Found"})}}]);
+//# sourceMappingURL=848.be9fb722.chunk.js.map

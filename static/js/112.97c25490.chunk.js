@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkchili_pepper=self.webpackChunkchili_pepper||[]).push([[112],{8112:(e,p,s)=>{s.r(p),s.d(p,{default:()=>r});var c=s(579);const r=()=>(0,c.jsx)(c.Fragment,{})}}]);
+//# sourceMappingURL=112.97c25490.chunk.js.map
