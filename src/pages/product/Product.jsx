@@ -16,7 +16,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const product = products.find(p => p.slug === slug);
-  const productUrl = `localhost:3000/${product.slug}`;
+  const productUrl = `https://ruslansuzanskyi.github.io/chili-pepper/${product.slug}`;
   const productTitle = product.title;
 
   const category = categories.find(cat => cat.id === product.categoryId);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Toolbar, Typography, List, ListItem, Link  } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 
 const Category = ({ categories, selectedCategory}) => {
   return (
@@ -32,7 +33,8 @@ const Category = ({ categories, selectedCategory}) => {
               }}
             >
               <Link
-                href={id === null ? "/shop" : `category/${slug}`}
+                component={RouterLink}
+                to={id === null ? "/shop" : `category/${slug}`}
                 sx={{
                   textDecoration: 'none',
                   height: '32px',
