@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../stores/cart';
 import StarsRating from '../starsRating/StarsRating';
+import { Link as RouterLink } from "react-router-dom";
 
 const ProductCard = ({data}) => {
   const { title, price, image, slug, categoryId, id, rating } = data;
@@ -89,7 +90,11 @@ const ProductCard = ({data}) => {
             },
           }}
         >
-          <Link key={slug} to={`/${slug}`}>
+          <Link 
+            key={slug} 
+            to={`/${slug}`} 
+            component={RouterLink}
+          >
             <CardMedia
               sx={{
                 width: "100%",

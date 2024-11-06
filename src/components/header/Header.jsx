@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AppBar, Container, List, ListItem, Link, Box, IconButton, Badge, Drawer} from "@mui/material";
 import { menu } from "../../utils/constants";
+import { Link as RouterLink } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import { ShoppingCart } from "@mui/icons-material";
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
@@ -104,8 +105,9 @@ const Header = React.memo(() => {
                       },
                     }}
                   >
-                    <Link 
-                      href={`/${link}`}
+                    <Link
+                      component={RouterLink}
+                      to={`/${link}`}
                       underline="none"
                       sx={{
                         margin: '0',
