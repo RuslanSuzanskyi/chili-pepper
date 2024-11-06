@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/chili-pepper/static/css/main.24b30c14.css",
-    "main.js": "/chili-pepper/static/js/main.58e84bb9.js",
+    "main.js": "/chili-pepper/static/js/main.d2acfb11.js",
     "static/css/670.a8f016d7.chunk.css": "/chili-pepper/static/css/670.a8f016d7.chunk.css",
     "static/js/670.407ad8e4.chunk.js": "/chili-pepper/static/js/670.407ad8e4.chunk.js",
     "static/js/883.406dd64d.chunk.js": "/chili-pepper/static/js/883.406dd64d.chunk.js",
@@ -45,7 +45,7 @@
     "static/media/product20.jpg": "/chili-pepper/static/media/product20.264cb9e1becb57064b82.jpg",
     "index.html": "/chili-pepper/index.html",
     "main.24b30c14.css.map": "/chili-pepper/static/css/main.24b30c14.css.map",
-    "main.58e84bb9.js.map": "/chili-pepper/static/js/main.58e84bb9.js.map",
+    "main.d2acfb11.js.map": "/chili-pepper/static/js/main.d2acfb11.js.map",
     "670.a8f016d7.chunk.css.map": "/chili-pepper/static/css/670.a8f016d7.chunk.css.map",
     "670.407ad8e4.chunk.js.map": "/chili-pepper/static/js/670.407ad8e4.chunk.js.map",
     "883.406dd64d.chunk.js.map": "/chili-pepper/static/js/883.406dd64d.chunk.js.map",
@@ -66,6 +66,6 @@
   },
   "entrypoints": [
     "static/css/main.24b30c14.css",
-    "static/js/main.58e84bb9.js"
+    "static/js/main.d2acfb11.js"
   ]
 }
