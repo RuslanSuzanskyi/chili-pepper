@@ -17,13 +17,17 @@ const CartTab = () => {
 
   useEffect(() => {
     if (statusTab) {
-      document.body.classList.add("no-scroll");
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
-      document.body.classList.remove("no-scroll");
+      document.body.style.overflow = 'visible';
+      document.body.style.paddingRight = '0';
     }
-
+  
     return () => {
-      document.body.classList.remove("no-scroll");
+      document.body.style.overflow = 'visible';
+      document.body.style.paddingRight = '0';
     };
   }, [statusTab]);
 

@@ -1,5 +1,6 @@
 import { List, Link, ListItem } from "@mui/material";
 import { products } from "../../../utils/constants";
+import { Link as RouterLink } from "react-router-dom";
 
 const SearchList = ({ input, onSearch }) => {
   const filteredProducts = products.filter(item => {
@@ -31,8 +32,9 @@ const SearchList = ({ input, onSearch }) => {
           }}
         >
           <Link
-            onClick={() => onSearch(item.title)}
-            href={`/${item.slug}`} 
+            component={RouterLink}
+            to={`/${item.slug}`}
+            onClick={() => onSearch(item.title)} 
             sx={{
               textDecoration: "none",
               cursor: "pointer",

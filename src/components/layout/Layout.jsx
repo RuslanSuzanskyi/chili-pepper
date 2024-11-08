@@ -8,10 +8,10 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <CartTab />
       <main>
         <Suspense>
           <Outlet />
+          <CartTab />
         </Suspense> 
       </main>
       <Footer />

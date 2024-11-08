@@ -12,6 +12,7 @@ const Home = () => {
         <Box
           display="flex"
           flexDirection="column"
+          paddingTop="16px"
         >
           <Typography
             variant="h1"
@@ -27,7 +28,10 @@ const Home = () => {
             sx={{
               display: 'grid',
               gridTemplateColumns: 'repeat(4, 1fr)',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              '@media (max-width: 768px)': {
+                gridTemplateColumns: 'repeat(2, 1fr)',
+              },
             }}
           >
             <ProductList 
@@ -59,7 +63,10 @@ const Home = () => {
             sx={{
               display: 'grid',
               gridTemplateColumns: 'repeat(4, 1fr)',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              '@media (max-width: 768px)': {
+                gridTemplateColumns: 'repeat(2, 1fr)',
+              },
             }}
           >
             <ProductList 

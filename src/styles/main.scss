@@ -8,16 +8,8 @@
 
 @import "./components/button";
 
-.no-scroll {
-  overflow: hidden;
-}
-
 .custom-container {
   max-width: toRem(1440) !important;
-}
-
-header {
-  margin-bottom: 50px;
 }
 
 button {

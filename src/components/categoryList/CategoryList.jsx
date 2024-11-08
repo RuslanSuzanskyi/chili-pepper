@@ -24,6 +24,9 @@ const Category = ({ categories, selectedCategory}) => {
           sx={{ 
             display: 'flex',
             flexDirection: 'column', 
+            '@media (max-width: 768px)': {
+              flexDirection: 'row'
+            }
           }}
         > 
           {categories.map(({name, id, slug}) => (
@@ -49,7 +52,7 @@ const Category = ({ categories, selectedCategory}) => {
                   transition: 'all 0.3s ease',
                   '&:hover': {
                     backgroundColor: 'var(--black-rgba-15-color)',
-                  },
+                  }
                 }}
               >
                 {name}

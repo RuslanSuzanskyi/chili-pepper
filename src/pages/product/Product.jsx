@@ -52,19 +52,22 @@ const Product = () => {
             to="/shop" 
             underline="none" 
             color="inherit"
+            fontFamily="var(--font-family-primary)"
           >
             Магазин
           </Link>
           <Link 
             component={RouterLink} 
-            to="/shop" 
+            to={`/shop/category/${category.slug}`} 
             underline="none" 
             color="inherit"
+            fontFamily="var(--font-family-primary)"
           >
             {category.name}
           </Link>
           <Typography 
             color="text.primary"
+            fontFamily="var(--font-family-primary)"
           >
             {product.title}
           </Typography>
