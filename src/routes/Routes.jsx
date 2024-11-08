@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { lazy } from "react";
 import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 
@@ -14,7 +14,7 @@ const Category = lazy(() => import("../pages/category/Category"));
 
 const AppRoute = () => {
   return (
-    <HashRouter basename="/chili-pepper">
+    <BrowserRouter basename="/chili-pepper">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -31,7 +31,7 @@ const AppRoute = () => {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
